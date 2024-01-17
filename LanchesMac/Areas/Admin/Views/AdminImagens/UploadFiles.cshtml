@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "UploadFiles";
+}
+
+<img src="~/Images/upload2.png" width="200" height="150" />
+
+<hr />
+
+<div class="mt-4 p-5 bg-primary text-white rounded">
+    <div class="container">
+        @if (ViewData["Erro"] != null)
+        {
+            <img src="~/Images/erro1.png" width="150" height="150" />
+            <h4>@ViewData["Erro"]</h4>
+        }
+    </div>
+    <div class="conainer">
+        @if (ViewData["Resultado"] != null)
+        {
+            <h4>@ViewData["Resultado"]</h4>
+            <hr />
+            @if (ViewBag.Arquivos != null)
+            {
+                @foreach (string arquivo in ViewBag.Arquivos)
+                {
+                    <li>
+                        @arquivo
+                    </li>
+                }
+            }
+        }
+    </div>
+</div>
